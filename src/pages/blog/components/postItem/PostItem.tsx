@@ -3,7 +3,7 @@ import { Post } from 'types/blog.type'
 
 interface PostItemProps {
   post: Post
-  onDelete: (post: Post) => void
+  onDelete: (postId: string) => void
   onEdit: (postId: string) => void
 }
 
@@ -34,7 +34,7 @@ export default function PostItem({ post, onDelete, onEdit }: PostItemProps) {
             <button
               type='button'
               className='rounded-r-lg border-t border-b border-r border-gray-200 bg-white py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:ring-2 focus:ring-blue-700'
-              onClick={() => onDelete(post)}
+              onClick={() => onDelete(post.id)}
             >
               Delete
             </button>
